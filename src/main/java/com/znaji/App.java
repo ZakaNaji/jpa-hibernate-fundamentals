@@ -1,8 +1,11 @@
 package com.znaji;
 
+import com.znaji.config.JpaConfig;
 import com.znaji.entity.Product;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.Persistence;
+import org.hibernate.jpa.HibernatePersistenceProvider;
+
+import java.util.HashMap;
 
 /**
  * Hello world!
@@ -12,12 +15,13 @@ public class App
 {
     public static void main( String[] args )
     {
-        var emf = Persistence.createEntityManagerFactory("my-persistence-unit");
+        var jpaConfig = new JpaConfig();
+        var emf = new HibernatePersistenceProvider().createContainerEntityManagerFactory(jpaConfig, new HashMap<>());
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
             var product = new Product();
-            product.setId(1L);
-            product.setName("Test");
+            product.setId(2L);
+            product.setName("Xiomi 13");
 
             em.persist(product);
             em.getTransaction().commit();
