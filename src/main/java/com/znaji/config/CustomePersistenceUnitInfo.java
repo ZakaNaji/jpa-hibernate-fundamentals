@@ -1,23 +1,18 @@
 package com.znaji.config;
 
 import com.zaxxer.hikari.HikariDataSource;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 import jakarta.persistence.SharedCacheMode;
 import jakarta.persistence.ValidationMode;
 import jakarta.persistence.spi.ClassTransformer;
 import jakarta.persistence.spi.PersistenceUnitInfo;
 import jakarta.persistence.spi.PersistenceUnitTransactionType;
-import org.hibernate.jpa.HibernatePersistenceProvider;
 
 import javax.sql.DataSource;
 import java.net.URL;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Properties;
 
-public class JpaConfig implements PersistenceUnitInfo {
+public class CustomePersistenceUnitInfo implements PersistenceUnitInfo {
 
     @Override
     public String getPersistenceUnitName() {
