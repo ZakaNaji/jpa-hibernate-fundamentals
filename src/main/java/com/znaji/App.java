@@ -2,6 +2,8 @@ package com.znaji;
 
 import com.znaji.config.CustomePersistenceUnitInfo;
 import com.znaji.entity.Employee;
+import com.znaji.entity.Passport;
+import com.znaji.entity.Person;
 import com.znaji.entity.Product;
 import com.znaji.keys.ProductKey;
 import jakarta.persistence.EntityManager;
@@ -28,10 +30,15 @@ public class App
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            var entity = new Product();
-            entity.setName("Iphone 17");
-            entity.setProductKey(new ProductKey(1L, "IP1"));
-            em.persist(entity);
+            var passport = new Passport();
+            passport.setCode("ABC");
+
+            var person = new Person();
+            person.setName("John Doe");
+            person.setPassport(passport);
+
+            em.persist(passport);
+            em.persist(person);
 
             em.getTransaction().commit();
         } catch (Exception e) {
