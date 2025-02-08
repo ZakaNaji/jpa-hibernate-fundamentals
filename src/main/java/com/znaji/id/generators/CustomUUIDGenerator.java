@@ -1,4 +1,4 @@
-package com.znaji.entity;
+package com.znaji.id.generators;
 
 import org.hibernate.annotations.IdGeneratorType;
 

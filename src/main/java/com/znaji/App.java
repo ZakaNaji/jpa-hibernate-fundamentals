@@ -3,6 +3,7 @@ package com.znaji;
 import com.znaji.config.CustomePersistenceUnitInfo;
 import com.znaji.entity.Employee;
 import com.znaji.entity.Product;
+import com.znaji.keys.ProductKey;
 import jakarta.persistence.EntityManager;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 
@@ -27,10 +28,10 @@ public class App
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            var e = new Employee();
-            e.setName("Znaji");
-            e.setAddress("Khenifra 1.");
-            em.persist(e);
+            var entity = new Product();
+            entity.setName("Iphone 17");
+            entity.setProductKey(new ProductKey(1L, "IP1"));
+            em.persist(entity);
 
             em.getTransaction().commit();
         } catch (Exception e) {

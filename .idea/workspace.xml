@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d77d430c-852c-4502-aada-5d6511104da5" name="Changes" comment="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added.&#10;-SEQUENCE: create a new sequence in DBMS, used to get next value of our id.&#10;-UUID: hibernate will generate UUID for our ids.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/znaji/entity/CustomUUIDGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/znaji/entity/CustomUUIDGeneratorStrategy.java" afterDir="false" />
+    <list default="true" id="d77d430c-852c-4502-aada-5d6511104da5" name="Changes" comment="#3: custom id generation strategy:&#10;- add custom anno, and annotate the id with id&#10;- our custom anno, uses IdGeneratorType(generationStrategy.class)&#10;- generationStrategy class: implements BeforeExecutionGenerator interface:&#10;- define event type(inser, update,...)&#10;- generate: the generated id value">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/znaji/keys/ProductKey.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/znaji/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/znaji/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/znaji/entity/CustomUUIDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/znaji/id/generators/CustomUUIDGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/znaji/entity/CustomUUIDGeneratorStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/znaji/id/generators/CustomUUIDGeneratorStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/znaji/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/znaji/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/znaji/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/znaji/entity/Product.java" afterDir="false" />
     </list>
-    <list id="2f4c56c7-e514-4ed2-9244-e9895d8c408e" name="New changelist" comment="" />
+    <list id="2f4c56c7-e514-4ed2-9244-e9895d8c408e" name="New changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +31,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/.idea/workspace.xml">
+      <ranges>
+        <range start1="6" end1="9" start2="6" end2="8" changelist="d77d430c-852c-4502-aada-5d6511104da5" />
+        <range start1="10" end1="10" start2="9" end2="12" changelist="d77d430c-852c-4502-aada-5d6511104da5" />
+        <range start1="11" end1="11" start2="13" end2="17" changelist="d77d430c-852c-4502-aada-5d6511104da5" />
+        <range start1="12" end1="13" start2="18" end2="18" changelist="d77d430c-852c-4502-aada-5d6511104da5" />
+        <range start1="29" end1="29" start2="34" end2="48" changelist="d77d430c-852c-4502-aada-5d6511104da5" />
+        <range start1="94" end1="95" start2="113" end2="114" changelist="d77d430c-852c-4502-aada-5d6511104da5" />
+        <range start1="160" end1="161" start2="179" end2="188" changelist="2f4c56c7-e514-4ed2-9244-e9895d8c408e" />
+        <range start1="175" end1="176" start2="202" end2="204" changelist="2f4c56c7-e514-4ed2-9244-e9895d8c408e" />
+      </ranges>
+    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -92,7 +111,7 @@
       <workItem from="1738765319026" duration="8271000" />
       <workItem from="1738865264999" duration="1571000" />
       <workItem from="1738920669401" duration="17000" />
-      <workItem from="1739020753282" duration="1913000" />
+      <workItem from="1739020753282" duration="3331000" />
     </task>
     <task id="LOCAL-00001" summary="#1: simple jpa entity manager using persistance.xml">
       <option name="closed" value="true" />

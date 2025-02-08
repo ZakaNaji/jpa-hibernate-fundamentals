@@ -1,5 +1,7 @@
 package com.znaji.entity;
 
+import com.znaji.keys.ProductKey;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -8,17 +10,17 @@ import jakarta.persistence.Table;
 @Table(name = "product")
 public class Product {
 
-    @Id
-    private Long id;
+    @EmbeddedId
+   private ProductKey productKey;
 
     private String name;
 
-    public Long getId() {
-        return id;
+    public ProductKey getProductKey() {
+        return productKey;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setProductKey(ProductKey productKey) {
+        this.productKey = productKey;
     }
 
     public String getName() {
@@ -32,7 +34,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "id=" + id +
+                "productKey=" + productKey +
                 ", name='" + name + '\'' +
                 '}';
     }

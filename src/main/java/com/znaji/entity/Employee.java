@@ -1,10 +1,8 @@
 package com.znaji.entity;
 
+import com.znaji.id.generators.CustomUUIDGenerator;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 public class Employee {
