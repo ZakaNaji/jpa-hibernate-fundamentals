@@ -24,16 +24,20 @@ public class App
         Map<String, String> props = new HashMap<>();
         props.put("hibernate.format_sql", "true");
         props.put("hibernate.show_sql", "true");
-        props.put("hibernate.hbm2ddl.auto", "update");
+        props.put("hibernate.hbm2ddl.auto", "create");
 
         var emf = new HibernatePersistenceProvider().createContainerEntityManagerFactory(new CustomePersistenceUnitInfo(), props);
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            var passport = em.find(Passport.class, 1L);
+            var passport = new Passport();
+            passport.setCode("ABC");
 
-            System.out.println(passport.getPerson());
+            var person = new Person();
+            person.setName("John Doe");
+            person.setPassport(passport);
 
+            em.persist(person);
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
