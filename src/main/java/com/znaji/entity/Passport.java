@@ -1,9 +1,6 @@
 package com.znaji.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
 public class Passport {
@@ -12,6 +9,9 @@ public class Passport {
     private Long id;
 
     private String code;
+
+    @OneToOne(mappedBy = "passport")
+    private Person person;
 
     public Long getId() {
         return id;
@@ -27,5 +27,13 @@ public class Passport {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
     }
 }
