@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d77d430c-852c-4502-aada-5d6511104da5" name="Changes" comment="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added.&#10;-SEQUENCE: create a new sequence in DBMS, used to get next value of our id.">
+    <list default="true" id="d77d430c-852c-4502-aada-5d6511104da5" name="Changes" comment="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added.&#10;-SEQUENCE: create a new sequence in DBMS, used to get next value of our id.&#10;-UUID: hibernate will generate UUID for our ids.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/znaji/entity/CustomUUIDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/znaji/entity/CustomUUIDGeneratorStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/znaji/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/znaji/entity/Employee.java" afterDir="false" />
     </list>
     <list id="2f4c56c7-e514-4ed2-9244-e9895d8c408e" name="New changelist" comment="" />
@@ -16,6 +19,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -49,6 +53,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.znaji.entity" />
       <recent name="com.znaji.config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -87,7 +92,7 @@
       <workItem from="1738765319026" duration="8271000" />
       <workItem from="1738865264999" duration="1571000" />
       <workItem from="1738920669401" duration="17000" />
-      <workItem from="1739020753282" duration="665000" />
+      <workItem from="1739020753282" duration="1913000" />
     </task>
     <task id="LOCAL-00001" summary="#1: simple jpa entity manager using persistance.xml">
       <option name="closed" value="true" />
@@ -145,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739021393125</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added.&#10;-SEQUENCE: create a new sequence in DBMS, used to get next value of our id.&#10;-UUID: hibernate will generate UUID for our ids.">
+      <option name="closed" value="true" />
+      <created>1739021474547</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739021474547</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,6 +172,7 @@
     <MESSAGE value="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id." />
     <MESSAGE value="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added." />
     <MESSAGE value="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added.&#10;-SEQUENCE: create a new sequence in DBMS, used to get next value of our id." />
-    <option name="LAST_COMMIT_MESSAGE" value="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added.&#10;-SEQUENCE: create a new sequence in DBMS, used to get next value of our id." />
+    <MESSAGE value="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added.&#10;-SEQUENCE: create a new sequence in DBMS, used to get next value of our id.&#10;-UUID: hibernate will generate UUID for our ids." />
+    <option name="LAST_COMMIT_MESSAGE" value="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added.&#10;-SEQUENCE: create a new sequence in DBMS, used to get next value of our id.&#10;-UUID: hibernate will generate UUID for our ids." />
   </component>
 </project>
