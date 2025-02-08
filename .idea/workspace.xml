@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d77d430c-852c-4502-aada-5d6511104da5" name="Changes" comment="#2: refactoring">
+    <list default="true" id="d77d430c-852c-4502-aada-5d6511104da5" name="Changes" comment="#2: life cycle methods">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/znaji/entity/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/znaji/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/znaji/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/znaji/config/CustomePersistenceUnitInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/znaji/config/CustomePersistenceUnitInfo.java" afterDir="false" />
     </list>
     <list id="2f4c56c7-e514-4ed2-9244-e9895d8c408e" name="New changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +88,9 @@
       <option name="presentableId" value="Default" />
       <updated>1738765317945</updated>
       <workItem from="1738765319026" duration="8271000" />
-      <workItem from="1738865264999" duration="1535000" />
+      <workItem from="1738865264999" duration="1571000" />
+      <workItem from="1738920669401" duration="17000" />
+      <workItem from="1739020753282" duration="259000" />
     </task>
     <task id="LOCAL-00001" summary="#1: simple jpa entity manager using persistance.xml">
       <option name="closed" value="true" />
@@ -112,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1738868471291</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="#2: life cycle methods">
+      <option name="closed" value="true" />
+      <created>1738869342337</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738869342337</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +134,7 @@
     <MESSAGE value="#1: simple jpa entity manager using persistance.xml" />
     <MESSAGE value="#2: configure entitymmanager factory with help of PersistanceUnitInfo(interface tto implement to provide all config metadata needed for hibernate config), and we get and instace of EMF from HibernatePersistanceProvider.createContainerEntityManagerFactory(persistanceUnitInfo, params)" />
     <MESSAGE value="#2: refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="#2: refactoring" />
+    <MESSAGE value="#2: life cycle methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="#2: life cycle methods" />
   </component>
 </project>
