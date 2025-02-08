@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
 
     private String name;

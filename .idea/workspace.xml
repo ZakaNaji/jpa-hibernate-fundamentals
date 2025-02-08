@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d77d430c-852c-4502-aada-5d6511104da5" name="Changes" comment="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d77d430c-852c-4502-aada-5d6511104da5" name="Changes" comment="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added.">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/znaji/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/znaji/entity/Employee.java" afterDir="false" />
     </list>
     <list id="2f4c56c7-e514-4ed2-9244-e9895d8c408e" name="New changelist" comment="" />
@@ -88,7 +87,7 @@
       <workItem from="1738765319026" duration="8271000" />
       <workItem from="1738865264999" duration="1571000" />
       <workItem from="1738920669401" duration="17000" />
-      <workItem from="1739020753282" duration="442000" />
+      <workItem from="1739020753282" duration="559000" />
     </task>
     <task id="LOCAL-00001" summary="#1: simple jpa entity manager using persistance.xml">
       <option name="closed" value="true" />
@@ -130,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739021141537</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added.">
+      <option name="closed" value="true" />
+      <created>1739021284995</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739021284995</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +149,7 @@
     <MESSAGE value="#2: refactoring" />
     <MESSAGE value="#2: life cycle methods" />
     <MESSAGE value="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id." />
-    <option name="LAST_COMMIT_MESSAGE" value="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id." />
+    <MESSAGE value="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added." />
+    <option name="LAST_COMMIT_MESSAGE" value="#3: if generation types:&#10;- IDENTITY: DBMS will use auto_increment on our id.&#10;- TABLE: hibernate will create another table to manages sequences, for each new entry(entity) a new sequence row will be added." />
   </component>
 </project>
