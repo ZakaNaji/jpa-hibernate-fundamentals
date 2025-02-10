@@ -15,7 +15,7 @@ public class Post {
 
     private String content;
 
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.PERSIST, mappedBy = "post")
     private List<Comment> comments;
 
     public Long getId() {

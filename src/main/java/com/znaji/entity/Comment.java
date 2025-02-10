@@ -10,6 +10,9 @@ public class Comment {
 
     private String content;
 
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    private Post post;
+
     public Long getId() {
         return id;
     }
