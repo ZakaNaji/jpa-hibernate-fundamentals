@@ -1,10 +1,7 @@
 package com.znaji;
 
 import com.znaji.config.CustomePersistenceUnitInfo;
-import com.znaji.entity.Employee;
-import com.znaji.entity.Passport;
-import com.znaji.entity.Person;
-import com.znaji.entity.Product;
+import com.znaji.entity.*;
 import com.znaji.keys.ProductKey;
 import jakarta.persistence.EntityManager;
 import org.hibernate.jpa.HibernatePersistenceProvider;
@@ -30,14 +27,15 @@ public class App
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            var passport = new Passport();
-            passport.setCode("ABC");
+            var post = new Post();
+            post.setTitle("Post 1");
+            post.setContent("This is my 1st post, so welcome all.");
 
-            var person = new Person();
-            person.setName("John Doe");
-            person.setPassport(passport);
+            var comment = new Comment();
+            comment.setContent("Welcome aboard!");
+            comment.setPost(post);
 
-            em.persist(person);
+            em.persist(comment);
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
