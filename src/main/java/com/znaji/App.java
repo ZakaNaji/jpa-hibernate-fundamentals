@@ -7,6 +7,7 @@ import jakarta.persistence.EntityManager;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -33,9 +34,10 @@ public class App
 
             var comment = new Comment();
             comment.setContent("Welcome aboard!");
-            comment.setPost(post);
 
-            em.persist(comment);
+            post.setComments(List.of(comment));
+
+            em.persist(post);
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
