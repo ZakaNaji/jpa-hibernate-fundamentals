@@ -28,16 +28,22 @@ public class App
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            var post = new Post();
-            post.setTitle("Post 1");
-            post.setContent("This is my 1st post, so welcome all.");
+            var group1 = new Group();
+            group1.setName("Math");
 
-            var comment = new Comment();
-            comment.setContent("Welcome aboard!");
+            var group2 = new Group();
+            group2.setName("Physics");
 
-            post.setComments(List.of(comment));
+            var user1 = new User();
+            user1.setName("Zakaria");
+            user1.setGroups(List.of(group1));
 
-            em.persist(post);
+            var user2 = new User();
+            user2.setName("Med");
+            user2.setGroups(List.of(group1, group2));
+
+            em.persist(user1);
+            em.persist(user2);
             em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
