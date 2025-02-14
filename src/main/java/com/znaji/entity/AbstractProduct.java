@@ -3,7 +3,7 @@ package com.znaji.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public abstract class AbstractProduct {
 
     @Id
