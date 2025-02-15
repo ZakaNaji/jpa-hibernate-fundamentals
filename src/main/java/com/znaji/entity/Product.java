@@ -1,26 +1,37 @@
 package com.znaji.entity;
 
-import com.znaji.keys.ProductKey;
-import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
+import java.math.BigDecimal;
 
 @Entity
-@Table(name = "product")
 public class Product {
-
-    @EmbeddedId
-   private ProductKey productKey;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     private String name;
 
-    public ProductKey getProductKey() {
-        return productKey;
+    private BigDecimal price;
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
     }
 
-    public void setProductKey(ProductKey productKey) {
-        this.productKey = productKey;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -31,11 +42,11 @@ public class Product {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "productKey=" + productKey +
-                ", name='" + name + '\'' +
-                '}';
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 }
