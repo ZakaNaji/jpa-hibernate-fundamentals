@@ -27,10 +27,14 @@ public class App
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            String jpql = "SELECT p FROM Product p where p.price > :price";
-            TypedQuery<Product> findAllProducts = em.createQuery(jpql, Product.class);
-            findAllProducts.setParameter("price", 10000);
-            findAllProducts.getResultList().forEach(System.out::println);
+            String jpql = "SELECT COUNT(p) FROM Product p";
+            TypedQuery<Long> numOfProducts = em.createQuery(jpql, Long.class);
+            System.out.println(numOfProducts.getSingleResult());
+
+            jpql = "SELECT AVG(p.price) FROM Product p";
+            TypedQuery<Double> avgPrice = em.createQuery(jpql, Double.class);
+            System.out.println(avgPrice.getSingleResult());
+
 
         } catch (Exception e) {
             e.printStackTrace();
