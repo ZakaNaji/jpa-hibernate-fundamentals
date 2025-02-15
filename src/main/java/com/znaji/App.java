@@ -3,6 +3,7 @@ package com.znaji;
 import com.znaji.config.CustomePersistenceUnitInfo;
 import com.znaji.entity.*;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 
 import java.math.BigDecimal;
@@ -26,17 +27,10 @@ public class App
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            var product1 = new Product();
-            product1.setName("A song of ice and fire");
-            product1.setPrice(BigDecimal.valueOf(500.99));
+            String jpql = "SELECT p FROM Product p";
+            TypedQuery<Product> findAllProducts = em.createQuery(jpql, Product.class);
+            findAllProducts.getResultList().forEach(System.out::println);
 
-            var product2 = new Product();
-            product2.setName("Iphone 15");
-            product2.setPrice(BigDecimal.valueOf(15000.99));
-
-            em.persist(product1);
-            em.persist(product2);
-            em.getTransaction().commit();
         } catch (Exception e) {
             e.printStackTrace();
         }
