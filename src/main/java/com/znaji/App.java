@@ -27,8 +27,9 @@ public class App
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            String jpql = "SELECT p FROM Product p";
+            String jpql = "SELECT p FROM Product p where p.price > :price";
             TypedQuery<Product> findAllProducts = em.createQuery(jpql, Product.class);
+            findAllProducts.setParameter("price", 10000);
             findAllProducts.getResultList().forEach(System.out::println);
 
         } catch (Exception e) {
