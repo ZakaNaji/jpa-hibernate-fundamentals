@@ -9,10 +9,10 @@ public class Enrollment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Student  student;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Course course;
 
     private LocalDate enrollmentDate;
@@ -47,5 +47,15 @@ public class Enrollment {
 
     public void setEnrollmentDate(LocalDate enrollmentDate) {
         this.enrollmentDate = enrollmentDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Enrollment{" +
+                "id=" + id +
+                ", student=" + student +
+                ", course=" + course +
+                ", enrollmentDate=" + enrollmentDate +
+                '}';
     }
 }

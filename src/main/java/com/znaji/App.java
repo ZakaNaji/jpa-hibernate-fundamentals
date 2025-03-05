@@ -28,19 +28,11 @@ public class App
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            var s = new Student();
-            s.setId(1L);
-            em.merge(s);
-
-            var c = new Course();
-            c.setTitle("Spring Boot");
-            em.persist(c);
-
-            var enr = new Enrollment();
-            enr.setCourse(c);
-            enr.setStudent(s);
-            enr.setEnrollmentDate(LocalDate.now());
-            em.persist(enr);
+            String jpql = """
+                SELECT s,e from Student s inner join Enrollment e on s.id = e.student.id
+                """;
+            TypedQuery<Object[]> query = em.createQuery(jpql, Object[].class);
+            query.getResultList().forEach(o -> System.out.println(o[0] + " " + o[1]));
 
             em.getTransaction().commit();
 
