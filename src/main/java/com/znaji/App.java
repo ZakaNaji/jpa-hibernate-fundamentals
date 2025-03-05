@@ -7,6 +7,7 @@ import jakarta.persistence.TypedQuery;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,14 +28,21 @@ public class App
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            String jpql = "SELECT COUNT(p) FROM Product p";
-            TypedQuery<Long> numOfProducts = em.createQuery(jpql, Long.class);
-            System.out.println(numOfProducts.getSingleResult());
+            var s = new Student();
+            s.setId(1L);
+            em.merge(s);
 
-            jpql = "SELECT AVG(p.price) FROM Product p";
-            TypedQuery<Double> avgPrice = em.createQuery(jpql, Double.class);
-            System.out.println(avgPrice.getSingleResult());
+            var c = new Course();
+            c.setTitle("Spring Boot");
+            em.persist(c);
 
+            var enr = new Enrollment();
+            enr.setCourse(c);
+            enr.setStudent(s);
+            enr.setEnrollmentDate(LocalDate.now());
+            em.persist(enr);
+
+            em.getTransaction().commit();
 
         } catch (Exception e) {
             e.printStackTrace();
