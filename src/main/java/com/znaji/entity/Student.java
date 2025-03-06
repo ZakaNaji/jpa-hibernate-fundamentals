@@ -6,6 +6,11 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
+@NamedQueries(value = {
+        @NamedQuery(name = "getStudentCount",query = """
+                select s.name, count(s) from Student s group by s.name
+                """)
+})
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

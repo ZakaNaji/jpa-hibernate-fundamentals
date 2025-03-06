@@ -29,10 +29,7 @@ public class App
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            String jpql = """
-                select s.name, count(s) from Student s group by s.name
-                """;
-            TypedQuery<Object[]> query = em.createQuery(jpql, Object[].class);
+            TypedQuery<Object[]> query = em.createNamedQuery("getStudentCount", Object[].class);
             query.getResultList().forEach(o -> System.out.println(o[0] + " " + o[1]));
 
             em.getTransaction().commit();
