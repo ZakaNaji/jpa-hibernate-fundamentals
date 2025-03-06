@@ -30,10 +30,10 @@ public class App
             em.getTransaction().begin();
 
             String jpql = """
-                SELECT NEW com.znaji.dto.StudentEnrollment(s,e) from Student s inner join Enrollment e on s.id = e.student.id
+                select s.name, count(s) from Student s group by s.name
                 """;
-            TypedQuery<StudentEnrollment> query = em.createQuery(jpql, StudentEnrollment.class);
-            query.getResultList().forEach(o -> System.out.println(o.s() + " " + o.e()));
+            TypedQuery<Object[]> query = em.createQuery(jpql, Object[].class);
+            query.getResultList().forEach(o -> System.out.println(o[0] + " " + o[1]));
 
             em.getTransaction().commit();
 
