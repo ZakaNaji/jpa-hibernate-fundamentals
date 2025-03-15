@@ -4,6 +4,7 @@ import com.znaji.config.CustomePersistenceUnitInfo;
 import com.znaji.dto.StudentEnrollment;
 import com.znaji.entity.*;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 import jakarta.persistence.TypedQuery;
 import org.hibernate.jpa.HibernatePersistenceProvider;
 
@@ -29,8 +30,11 @@ public class App
         try (EntityManager em = emf.createEntityManager()) {
             em.getTransaction().begin();
 
-            TypedQuery<Object[]> query = em.createNamedQuery("getStudentCount", Object[].class);
-            query.getResultList().forEach(o -> System.out.println(o[0] + " " + o[1]));
+            String sql = """
+                SELECT * FROM student
+                """;
+            Query nativeQuery = em.createNativeQuery(sql, Student.class);
+            nativeQuery.getResultList().forEach(System.out::println);
 
             em.getTransaction().commit();
 
